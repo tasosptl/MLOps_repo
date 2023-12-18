@@ -3,6 +3,7 @@
 import argparse
 import glob
 import os
+import mflow
 
 import pandas as pd
 
@@ -13,7 +14,7 @@ from sklearn.linear_model import LogisticRegression
 
 # define functions
 def main(args):
-    # TO DO: enable autologging
+    mlflow.autolog()
 
 
     # read data
