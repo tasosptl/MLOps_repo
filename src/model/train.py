@@ -33,7 +33,8 @@ def get_csvs_df(path):
     return pd.concat((pd.read_csv(f) for f in csv_files), sort=False)
 
 
-# TO DO: add function to split data
+def split_data(df):
+    
 
 
 def train_model(reg_rate, X_train, X_test, y_train, y_test):
@@ -59,16 +60,9 @@ def parse_args():
 
 # run script
 if __name__ == "__main__":
-    # add space in logs
-    print("\n\n")
-    print("*" * 60)
 
     # parse args
     args = parse_args()
 
     # run main function
     main(args)
-
-    # add space in logs
-    print("*" * 60)
-    print("\n\n")
