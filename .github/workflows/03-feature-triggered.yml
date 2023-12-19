@@ -1,1 +1,10 @@
+name: Automatically triggered upon feature request creation
 
+on:
+  [pull_request]
+
+jobs:
+  steps:
+  - name: Placeholder
+      run: |
+        echo "Will add code checks here in next challenge"
