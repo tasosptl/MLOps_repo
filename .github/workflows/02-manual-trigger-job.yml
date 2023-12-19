@@ -15,6 +15,8 @@ jobs:
       uses: azure/login@v1
       with:
         creds: ${{secrets.AZURE_CREDENTIALS}}
+    - name: Clone the repo
+      run: git clone https://github.com/tasosptl/MLOps_repo
     - name: Train the model
       run: az ml job create --file MLOps_repo/src/job.yml --resource-group cloudlab-rg1 --workspace-name MLlab
 
