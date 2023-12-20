@@ -23,7 +23,7 @@ jobs:
           pip install -r requirements.txt
 
       - name: Train model in dev environment
-        run: python train.py --data-dir ./diabetes-dev-folder
+        run: python train.py --data-dir ./experimentation/data
 
   production:
     needs: experiment
