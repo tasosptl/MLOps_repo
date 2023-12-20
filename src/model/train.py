@@ -3,7 +3,6 @@
 import argparse
 import glob
 import os
-import mflow as mflow
 
 import pandas as pd
 
@@ -14,8 +13,6 @@ from sklearn.linear_model import LogisticRegression
 
 # define functions
 def main(args):
-    mlflow.autolog()
-    
     # read data
     df = get_csvs_df(args.training_data)
 
@@ -41,7 +38,8 @@ def split_data(df, test_size=0.2, random_state=42):
     y = df['target']
 
     # split data into training and testing set
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=test_size, random_state=random_state)
+    X_train, X_test, y_train, y_test = train_test_split(X, y,
+                                                        test_size=test_size, random_state=random_state)
 
     return X_train, X_test, y_train, y_test
 
